@@ -17,6 +17,11 @@ class GradientContainer extends StatelessWidget {
       : fromColor = Colors.purple,
         toColor = Colors.deepPurple;
 
+  // onPressedMethod - function that is called when the button is pressed
+  void onPressedMethod() {
+    print('Button Pressed');
+  }
+
   final Color fromColor;
   final Color toColor;
 
@@ -26,17 +31,33 @@ class GradientContainer extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [
-            fromColor,
-            toColor
-          ],
+          colors: [fromColor, toColor],
           begin: startAlignment,
           end: endAlignment,
         ),
       ),
       child: Center(
-        child: Image.asset('assets/images/dice-2.png', width: 200.0, height: 200.0)
-      ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Image.asset('assets/images/dice-2.png',
+                  width: 200.0,
+                  height: 200.0
+              ), // Image.asset - loads an image from the assets folder
+              const SizedBox(height: 20), // SizedBox - creates a box with a specific size, any content that does not fit will be clipped
+              TextButton(
+                onPressed: onPressedMethod, 
+                style: TextButton.styleFrom(
+                  //padding: const EdgeInsets.only(
+                  //    top: 20
+                  // ), 
+                  foregroundColor: Colors.white, 
+                  textStyle: const TextStyle(fontSize: 28)
+                ), // TextButton.styleFrom - allows you to change the style of the button
+                child: const Text('Roll Dice')
+            )
+        ],
+      )),
     );
   }
 }
