@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart'; // Flutter library
 
-import 'package:first_app/styled_text.dart'; // StyledText class
-
 const startAlignment = Alignment
     .topLeft; // using type inference, startAlignment is set at compile time hence the use of const
 const endAlignment = Alignment
@@ -13,6 +11,11 @@ class GradientContainer extends StatelessWidget {
   // constructor
   const GradientContainer(this.fromColor, this.toColor,
       {super.key}); // super.key - passes the key to the parent class - StatelessWidget
+
+  // alternative constructor - you are allowed to have a second constructor function in a class
+  const GradientContainer.purple({super.key})
+      : fromColor = Colors.purple,
+        toColor = Colors.deepPurple;
 
   final Color fromColor;
   final Color toColor;
@@ -31,8 +34,8 @@ class GradientContainer extends StatelessWidget {
           end: endAlignment,
         ),
       ),
-      child: const Center(
-        child: StyledText('Hello World'), // You dont have to pass a value for the named key argument because named arguments are by default optional
+      child: Center(
+        child: Image.asset('assets/images/dice-2.png', width: 200.0, height: 200.0)
       ),
     );
   }

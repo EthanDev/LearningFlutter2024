@@ -12,11 +12,8 @@ void main() {
   runApp(
     const MaterialApp(
       home: Scaffold(
-        body: GradientContainer(
-          Color.fromARGB(255, 59, 3, 104),
-          Color.fromARGB(255, 157, 81, 220),
+        body: GradientContainer.purple()
         ),
       ),
-    ),
-  ); // Flutter instruction to start the app to show what should be shown on the screen
+    );
 }
