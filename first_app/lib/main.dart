@@ -1,19 +1,13 @@
-// Flutter imports
-import 'package:flutter/material.dart'; // Flutter library
+import 'package:flutter/material.dart';
 
-// Imports from other files
-import 'package:first_app/gradient_container.dart'; // GradientContainer class
+import 'package:first_app/new_gradient_container.dart';
 
-// Custom function definition
 void main() {
-  //display a material app widget on the screen
-  // const - keyword provided by dart - to help runtime performance of the app
-  //         allows the duplication of memory in the app
-  runApp( // runApp() tells Flutter what to display on the screen (i.e. which UI elements to display)
+  runApp(
     const MaterialApp(
       home: Scaffold(
-        body: GradientContainer.purple()
-        ),
+        body: NewGradientContainer.custom(),
       ),
-    );
+    ),
+  );
 }
