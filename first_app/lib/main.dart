@@ -9,7 +9,7 @@ void main() {
   //display a material app widget on the screen
   // const - keyword provided by dart - to help runtime performance of the app
   //         allows the duplication of memory in the app
-  runApp(
+  runApp( // runApp() tells Flutter what to display on the screen (i.e. which UI elements to display)
     const MaterialApp(
       home: Scaffold(
         body: GradientContainer.purple()
