@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'dart:math'; // Random class
+
+// Global variable/objects
+final randomizer = Random(); // Creates once a random object
 
 class DiceRoller extends StatefulWidget {
 
@@ -19,14 +23,18 @@ class DiceRoller extends StatefulWidget {
 // meant to be used internally 
 class _DiceRollerState extends State<DiceRoller> {
 
-  var activeDiceImage = 'assets/images/dice-1.png';
+  var currentDiceRoll = 1;
 
   // rollDice - function that is called when the button is pressed
   void rollDice() {
+
+    // Random().nextInt(6) - generates a random number between 0 and 5
+    // Random().nextInt(6) + 1 - generates a random number between 1 and 6    
+                          
     // setState - function that tells flutter that the state has changed and execute the build method again
     // setState is a function that is inherited from the State class
     setState(() {
-      activeDiceImage = 'assets/images/dice-4.png';
+      currentDiceRoll = randomizer.nextInt(6) + 1;
     });
   }
 
@@ -37,7 +45,7 @@ class _DiceRollerState extends State<DiceRoller> {
             mainAxisSize: MainAxisSize.min,
             children: [
                 Image.asset(
-                    activeDiceImage,
+                    'assets/images/dice-$currentDiceRoll.png',
                     width: 200.0,
                     height: 200.0
                 ), // Image.asset - loads an image from the assets folder
