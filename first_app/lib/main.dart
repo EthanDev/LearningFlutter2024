@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-import 'package:first_app/new_gradient_container.dart';
+import 'package:first_app/start_screen.dart';
 
 void main() {
   runApp(
     const MaterialApp(
       home: Scaffold(
-        body: NewGradientContainer.custom(),
+        body: StartScreen(),
       ),
     ),
   );
