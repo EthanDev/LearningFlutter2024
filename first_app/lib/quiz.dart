@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 // Get access to StartScreen class
 import 'package:first_app/start_screen.dart';
+import 'package:first_app/questions_screen.dart';
 
 class Quiz extends StatefulWidget {
   // constructor function
@@ -16,6 +17,17 @@ class Quiz extends StatefulWidget {
 
 // State class is a generic of type Quiz
 class _QuizState extends State<Quiz> {
+
+  // Storing a widget in a variable
+  Widget activeScreen = const StartScreen(); // StartScreen is the default screen;
+
+  // This method is called when the user taps the Start Quiz button
+  switchScreen() {
+    // setState() is a method of the State class - it tells Flutter to redraw the screen
+    setState(() {
+      activeScreen = const QuestionsScreen();
+    });
+  }
 
   @override
   Widget build(context){
@@ -32,7 +44,7 @@ class _QuizState extends State<Quiz> {
               end: Alignment.bottomCenter,
             ),
           ),
-          child: const StartScreen(),
+          child: activeScreen,
         ),
       ),
     );
