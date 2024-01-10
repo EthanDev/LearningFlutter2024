@@ -2,8 +2,12 @@ import 'package:flutter/material.dart'; // Flutter library
 
 // StartScreen Class - StatelessWidget - There are no changes on the screen
 class StartScreen extends StatelessWidget {
-  // constructor
-  const StartScreen({super.key});
+
+
+  // constructor - this.startQuiz automatically sets the starQuiz property
+  const StartScreen(this.startQuiz, {super.key});
+
+  final void Function() startQuiz; // this variable stores a function
 
   @override // Override a method expected by StatelessWidget
   Widget build(context) {
@@ -30,7 +34,7 @@ class StartScreen extends StatelessWidget {
           // Outlined button
           OutlinedButton.icon(
             onPressed: () {
-              // ...
+              startQuiz(); // Call the switchScreen function
             },
             style: OutlinedButton.styleFrom(
               foregroundColor: Colors.white,

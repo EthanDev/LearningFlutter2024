@@ -19,10 +19,10 @@ class Quiz extends StatefulWidget {
 class _QuizState extends State<Quiz> {
 
   // Storing a widget in a variable
-  Widget activeScreen = const StartScreen(); // StartScreen is the default screen;
+  Widget activeScreen = const StartScreen(switchScreen); // StartScreen is the default screen;
 
   // This method is called when the user taps the Start Quiz button
-  switchScreen() {
+  void switchScreen() {
     // setState() is a method of the State class - it tells Flutter to redraw the screen
     setState(() {
       activeScreen = const QuestionsScreen();
