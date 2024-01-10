@@ -1,49 +1,42 @@
 import 'package:flutter/material.dart';
 
 class MainInterface extends StatefulWidget {
-
   // Constructir
   const MainInterface({super.key});
 
   @override
-  State<MainInterface> createState() => _MainInterfaceState();  
-
+  State<MainInterface> createState() => _MainInterfaceState();
 }
 
 class _MainInterfaceState extends State<MainInterface> {
-
   @override
   Widget build(context) {
-
-      final ButtonStyle style =
+    final ButtonStyle style =
         ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20));
-        
-      return Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Image.asset(
-            'assets/images/quiz-logo.png',
-            width: 200.0,
-            height: 200.0,
-          ),
-          const SizedBox(height: 20), // divider
-          const Text (
-            'Learn Flutter The Fun Way',
+
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Image.asset(
+          'assets/images/quiz-logo.png',
+          width: 200.0,
+          height: 200.0,
+        ),
+        const SizedBox(height: 20), // divider
+        const Text('Learn Flutter The Fun Way',
             style: TextStyle(
-              color: Colors.white,
-              fontSize: 28,
-              fontWeight: FontWeight.bold
-            )
-          ),
-          const SizedBox(height: 20), // divider
-          ElevatedButton(
+                color: Colors.white,
+                fontSize: 28,
+                fontWeight: FontWeight.bold)),
+        const SizedBox(height: 20), // divider
+        ElevatedButton(
           style: style,
-          onPressed: () {},
+          onPressed: () {
+            print('Button pressed');
+          },
           child: const Text('Enabled'),
         ),
-        ], // 
-
-      ); // Column 
+      ], //
+    ); // Column
   } // build
-
 } // _MainInterfaceState
